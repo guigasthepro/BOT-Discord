@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'dart:async';
+import '../../dashboard/view/dashboard.dart';
 
 class LoadingScreen extends StatefulWidget{
   State<LoadingScreen> createState() => _MyLoadingScreenState();
@@ -19,7 +20,7 @@ class _MyLoadingScreenState extends State<LoadingScreen> {
     _textStreamController = StreamController<String>();
     _textStream = _textStreamController.stream;
 
-    Timer.periodic(Duration(seconds: 2), (timer) {
+    Timer.periodic(Duration(seconds: 4), (timer) {
       _textIndex++;
       if (_textIndex > 2) {
         _textIndex = 0;
@@ -33,6 +34,10 @@ class _MyLoadingScreenState extends State<LoadingScreen> {
 
     // Adiciona um atraso de 10 segundos antes de navegar para a página do dashboard
     Future.delayed(Duration(seconds: 10), () {
+      Navigator.pushReplacement(
+        context,
+        MaterialPageRoute(builder: (context) => Dashboard()), // Replace with your DashboardScreen
+      );
     });
   }
 
