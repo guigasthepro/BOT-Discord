@@ -1,3 +1,4 @@
+import 'package:emelpark/widgets/navigation.dart';
 import 'package:flutter/material.dart';
 import 'dart:async';
 import '../../dashboard/view/dashboard.dart';
@@ -36,7 +37,7 @@ class _MyLoadingScreenState extends State<LoadingScreen> {
     Future.delayed(Duration(seconds: 10), () {
       Navigator.pushReplacement(
         context,
-        MaterialPageRoute(builder: (context) => Dashboard()), // Replace with your DashboardScreen
+        MaterialPageRoute(builder: (context) => Navigation()), // Replace with your DashboardScreen
       );
     });
   }
