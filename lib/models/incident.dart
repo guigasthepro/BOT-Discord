@@ -1,13 +1,13 @@
 import 'package:equatable/equatable.dart';
 
 
-class incident extends Equatable {
+class Incident extends Equatable {
   final int idIncident;
   final String titulo;
   final String descricao;
   final int gravidade;
 
-  const incident(this.idIncident,this.titulo,this.descricao,this.gravidade);
+  const Incident(this.idIncident,this.titulo,this.descricao,this.gravidade);
 
 
 

@@ -11,11 +11,13 @@ class Park extends Equatable{
   final int maxCapacity;
   final int currentCapacity;
   final int lastUpdate;
+  final String workingHours;
+  final double tarifa;
 
   final double latitute;
   final double longidute;
 
-  final List<incident> incidentList;
+  final List<Incident> incidentList;
 
   const Park(
       this.idPark,
@@ -24,8 +26,10 @@ class Park extends Equatable{
       this.maxCapacity,
       this.currentCapacity,
       this.lastUpdate,
+      this.workingHours,
       this.latitute,
       this.longidute,
+      this.tarifa,
       this.incidentList);
 
   @override
@@ -43,9 +47,11 @@ class Park extends Equatable{
         ParkType(1, "sub"),
         100, // maxCapacity
         50,  // currentCapacity
-        DateTime.now().millisecondsSinceEpoch, // lastUpdate
+        DateTime.now().millisecondsSinceEpoch,
+        "1-7",// lastUpdate
         40.7128, // latitude
         -74.0060, // longitude
+        1,
         [], // incidentList
       ),
     );
@@ -58,8 +64,10 @@ class Park extends Equatable{
         200, // maxCapacity
         100,  // currentCapacity
         DateTime.now().millisecondsSinceEpoch, // lastUpdate
+        "1-7",
         34.0522, // latitude
         -118.2437, // longitude
+        1,
         [], // incidentList
       ),
     );
@@ -72,8 +80,10 @@ class Park extends Equatable{
         150, // maxCapacity
         75,  // currentCapacity
         DateTime.now().millisecondsSinceEpoch, // lastUpdate
+        "1-7",
         51.5074, // latitude
         -0.1278, // longitude
+        1,
         [], // incidentList
       ),
     );

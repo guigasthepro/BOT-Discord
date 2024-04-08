@@ -1,4 +1,5 @@
 import 'dart:async';
+import 'package:emelpark/parkDetail/view/parkDetail.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:emelpark/models/park.dart';
@@ -40,8 +41,16 @@ class _MyParkListState extends State<ParkList>{
         itemBuilder: (context, index) {
           final park = _parks[index];
           return ListTile(
+            leading: Icon(Icons.local_parking),
             title: Text(park.parkName.toString()),
             subtitle: Text('Tipo: ${park.partType.idParkType}, Capacidade: ${park.currentCapacity}/${park.maxCapacity}, Última atualização: ${park.lastUpdate}'),
+            trailing: Icon(Icons.arrow_forward_ios),
+            onTap: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => ParkDetail(park: park)),
+              );
+            },
             // Add more information as needed
           );
         },
